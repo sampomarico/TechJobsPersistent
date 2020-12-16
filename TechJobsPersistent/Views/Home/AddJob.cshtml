@@ -6,7 +6,7 @@
     <div class="form-group">
         <label asp-for="Name"></label>
         <input class="form-control" asp-for="Name" />
-        <span></span>
+        <span asp-validation-for="Name" class="alert-danger"></span>
     </div>
     <div class="form-group">
         <label asp-for="EmployerId">Employer</label>
@@ -16,7 +16,7 @@
     <div class="form-group">
         @foreach(Skill skill in Model.Skills)
         {
-            <label>@skill.Name</label>
+            <label name="selectedSkills">@skill.Name</label>
             <input type="checkbox" name="selectedSkills" value="@skill.Id" />
         }
     </div>
